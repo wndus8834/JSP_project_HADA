@@ -1,0 +1,115 @@
+user (사용자 테이블)
+-userPassword : 비밀번호
+-userEmail : 사용자 이메일
+-userGrade : 사용자 학년
+-userSemester : 사용자 이수학기
+-userDepart : 사용자 소속 학과
+-userName : 사용자 이름
+-userQuestion : 사용자 비밀번호 찾기시 질문
+-userAnswer : 사용자 비밀번호 찾기시 답
+-adminApply : 사용자 관리자 권한 신청시 true
+-adminChecked : 관리자일때 true
+
+------------------------------------------------------------
+
+userStudentMemo (학생 상담 테이블)
+-userID : 사용자 (학생) 아이디
+-adminID : 관리자 (교수) 아이디
+-memoContent : 상담 내용
+-memoTime : 상담 내용 작성 시간
+
+------------------------------------------------------------
+
+adminscore (관리자 졸업요건 점수 관리 테이블)
+-userDepart : 학과
+-userProcess : 특별과정 명
+-userAdmission : 학번
+-totalQulture : 총 교양 학점
+-totalQultureNecessary : 총 교양 필수 학점
+-totalMajor : 총 전공 학점
+-totalMajorNecessary : 총 전공 필수 학점
+-totalGraduate : 총 졸업 이수 학점
+-totalAbility : 총 핵심역량 학점
+-totalFindMajor : 총 전탐 학점
+
+------------------------------------------------------------
+
+userscore ( 회원 졸업요건 점수 테이블)
+-userID : 회원 아이디
+-refinementScore : 교양 선택 점수
+-culturalReqScore : 교양 필수 점수
+-cultureNeceSatisfy : 교양 필수 점수 충족 여부
+-cultureReqSatisfy : 교양 전체 점수 충족 여부
+-majorSelectScore : 전공 선택 점수
+-majorReqScore : 전공 필수 점수
+-majorNeceSatisfy : 전공 필수 점수 충족 여부
+-majorReqSatisfy : 전공 전체 점수 충족 여부
+-graduPossible : 졸업 가능여부
+-capaReinforceScore : 핵심역량 점수
+-majorFind : 전공 탐색 점수
+-FindSatisfy : 전공 탐색 충족 여부
+
+------------------------------------------------------------
+
+class (사용자 수강 테이블)
+-subjYear : 수강과목 이수 년도
+-subjSemester : 수강과목 이수 학기
+-subjCode : 수강과목코드
+-userID : 사용자 아이디
+-subjName : 수강과목 이름
+-subjMain : 수강과목 이수구분
+-score : 수강과목 이수학점
+-grade : 수강과목 사용자 취득 점수
+-changeMain : 전공 승인 신청 시 true, 아닐 시 false
+
+------------------------------------------------------------
+
+board (게시판 테이블)
+-userID : 게시글 작성자 ID
+-boardID : 게시글 번호
+-boardTitle : 게시글 제목
+-boardContent : 게시글 내용
+-boardDate : 게시글 작성 시간
+-boardHit : 게시글 조회수
+-boardFile : 첨부파일 저장 이름 ( 같은 이름의 파일일 경우 수정되어 저장)
+-boardRealFile : 첨부파일 실제 이름
+-boardGroup : 게시글과 그에대한 답변글을 구분하기 위한 칼럼
+-boardSequence : 답변글 들여쓰기 구분을 위한 칼럼
+-boardLevel : 답변글에 대한 구분
+-boardAvilable : 게시글 삭제 여부
+
+------------------------------------------------------------
+
+departr (학과별 학번별 필수과목 테이블)
+-userDepart : 학과
+-userAdmission : 학번
+-subjCode : 과목코드
+-subjGrade : 필수과목 이수 학년
+-subjSemester : 필수과목 이수 학기
+-subjDivision : 이수구분(교필, 전필)
+
+------------------------------------------------------------
+
+subj2 ( 과목 테이블, 핵심역량 포함)
+-subjYear : 개설 년도
+-subjSemester : 개설 학기
+-subjCode : 과목코드
+-bigDepartName : 대분류 ( ex 공학계)
+-userDepart : 학과
+-subjName : 과목 이름
+-subjMain : 이수구분 (ex 전필)
+-subjScore : 과목 이수 학점
+
+------------------------------------------------------------
+
+insteadtable (대체과목 테이블)
+-bigDepartName : 대분류 (ex 공학계)
+-beInsteadDepart : 대체될 과목(폐지과목) 학과
+-beInsteadSubjCode : 대체될 과목(폐지과목) 코드
+-beInsteadSubjName : 대체될 과목(폐지과목) 이름
+-subjMain : 이수구분
+-subjScore : 과목 이수 학점
+-insteadSubjCode : 대체과목 코드
+-insteadSubjName : 대체과목 이름
+
+
